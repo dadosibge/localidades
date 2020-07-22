@@ -1,7 +1,7 @@
 module.exports = {
   env: {
-    browser: true,
-    es6: true,
+    node: true,
+    es2020: true,
   },
   extends: [
     'airbnb-base',
@@ -12,12 +12,13 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 11,
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
   plugins: [
     '@typescript-eslint',
   ],
   rules: {
+    'import/prefer-default-export': 'off',
   },
 };
