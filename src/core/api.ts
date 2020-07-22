@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-declare module 'axios' {
-interface AxiosResponse<T = any> extends Promise<T> {}
-}
-
 function api(baseURL: string) {
   return axios.create({
     baseURL,

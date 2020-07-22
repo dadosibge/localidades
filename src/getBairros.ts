@@ -1,3 +1,4 @@
 import { localidades } from './core/api';
+import { AxiosResponse } from 'axios';
 
-export default () => localidades.get('/distrito');
+export default (): Promise<AxiosResponse> => localidades.get('/distrito');
