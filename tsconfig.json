@@ -1,9 +1,7 @@
 {
-    "files": [
-        "src/main.ts"
-    ],
+    "rootDir": "./src",
     "compilerOptions": {
         "noImplicitAny": true,
-        "target": "es5"
+        "target": "es5",
     }
 }
