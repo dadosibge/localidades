@@ -1,6 +1,6 @@
 import getDistritos from '../../src/distritos/getDistritos';
 
-test('the data is peanut butter', () => {
+test('getDistritos, () => {
   return getDistritos().then((response) => {
     expect(response.status).toBe(200);
 
