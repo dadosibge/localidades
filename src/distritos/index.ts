@@ -1,23 +1,24 @@
 import { AxiosResponse } from 'axios';
 import { localidades } from '../core/api';
+import { Distrito } from '../models/distrito';
 
-const todos = (): Promise<AxiosResponse> => localidades.get('/distritos');
+type Response<T> = Promise<AxiosResponse<T>>;
 
-const porId = (id: string): Promise<AxiosResponse> => localidades.get(`/distritos/${id}`);
+const todos = (): Response<Distrito[]> => localidades.get('/distritos');
 
-const porUf = (uf: string): Promise<AxiosResponse> => localidades.get(`/estados/${uf}/distritos`);
+const porId = (id: string): Response<Distrito> => localidades.get<Distrito>(`/distritos/${id}`);
 
-const porMesorregiao = (mesorregiao: string): Promise<AxiosResponse> =>
+const porUf = (uf: string): Response<Distrito[]> => localidades.get(`/estados/${uf}/distritos`);
+
+const porMesorregiao = (mesorregiao: string): Response<Distrito[]> =>
   localidades.get(`/mesorregioes/${mesorregiao}/distritos`);
 
-const porMicrorregiao = (microrregiao: string): Promise<AxiosResponse> =>
+const porMicrorregiao = (microrregiao: string): Response<Distrito[]> =>
   localidades.get(`/microrregioes/${microrregiao}/distritos`);
 
-const porMunicipio = (municipio: string): Promise<AxiosResponse> =>
-  localidades.get(`/municipios/${municipio}/distritos`);
+const porMunicipio = (municipio: string): Response<Distrito[]> => localidades.get(`/municipios/${municipio}/distritos`);
 
-const porRegiao = (macrorregiao: string): Promise<AxiosResponse> =>
-  localidades.get(`/regioes/${macrorregiao}/distritos`);
+const porRegiao = (macrorregiao: string): Response<Distrito[]> => localidades.get(`/regioes/${macrorregiao}/distritos`);
 
 export default {
   todos,

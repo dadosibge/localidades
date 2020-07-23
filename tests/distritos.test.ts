@@ -1,11 +1,6 @@
-import distritos from '../../src/distritos';
+import distritos from '../src/distritos';
 import { AxiosResponse, AxiosError } from 'axios';
-
-const distrito = expect.objectContaining({
-  id: expect.any(Number),
-  municipio: expect.any(Object),
-  nome: expect.any(String),
-});
+import { distrito } from './model';
 
 const success = (response: AxiosResponse) => {
   expect(response.status).toBe(200);
